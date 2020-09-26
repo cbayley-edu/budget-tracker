@@ -8,8 +8,10 @@
     "start": "node server.js",
     "lite-server": "lite-server",
     "seed": "node seeders/seed.js",
+    "lint": "eslint --quiet .",
+    "fix": "eslint --fix .",
     "build": "webpack --watch",
-    "heroku-postbuild": "webpack -p" 
+    "heroku-postbuild": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,14 @@
     "babel-loader": "^8.1.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
-    "webpack-pwa-manifest": "^4.2.0"
+    "webpack-pwa-manifest": "^4.2.0",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "mocha": "^5.2.0",
+    "prettier": "^1.13.7"
   }
 }

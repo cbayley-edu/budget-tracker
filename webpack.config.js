@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 const path = require("path");
 
@@ -20,11 +21,13 @@ const config = {
       background_color: "#01579b",
       theme_color: "#ffffff",
       start_url: "/",
-      icons: [{
-        src: path.resolve("./public/icons/icon_192x192.png"),
-        sizes: [96, 128, 192, 256, 384, 512],
-        destination: path.join("assets", "icons")
-      }]
+      icons: [
+        {
+          src: path.resolve("./public/icons/icon_192x192.png"),
+          sizes: [96, 128, 192, 256, 384, 512],
+          destination: path.join("assets", "icons")
+        }
+      ]
     })
   ],
   module: {

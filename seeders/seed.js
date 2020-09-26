@@ -9,8 +9,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
 const budgetSeed = [
   {
     date: new Date(new Date().setDate(new Date().getDate() - 1)),
-    name : "Opening Balance",
-    value : 10000,
+    name: "Opening Balance",
+    value: 10000
   }
 ];
 
