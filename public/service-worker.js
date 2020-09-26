@@ -1,38 +1,26 @@
+const FILES_TO_CACHE = [
+  '/',
+  '/favicon.png',
+  '/manifest.webmanifest',
+  '/db.js',
+  '/index.js',
+  '/styles.css',
+  '/icons/icon-192x192.png',
+  '/icons/icon-512x512.png'
+];
+
 const CACHE_NAME = "static-cache-v2";
 const DATA_CACHE_NAME = "data-cache-v1";
 
-const FILES_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/favicon.png',
-  '/manifest.webmanifest',
-  '/service-worker.js',
-  '/index.js',
-  '/style.css',
-  '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png',
-  '/dist/bundle.js',
-  '/dist/manifest.json',
-  '/dist/assets/icons/icon_96x96.png',
-  '/dist/assets/icons/icon_128x128.png',
-  '/dist/assets/icons/icon_144x144.png',
-  '/dist/assets/icons/icon_152x152.png',
-  '/dist/assets/icons/icon_192x192.png',
-  '/dist/assets/icons/icon_384x384.png',
-  '/dist/assets/icons/icon_512x512.png'
-];
-
 // install
-self.addEventListener("install", function (evt) {
+self.addEventListener("install", function (evt)  {
     // pre cache all static assets
     evt.waitUntil(
       caches.open(CACHE_NAME).then((cache) => {
         console.log('Files pre-cached.');
-        cache.addAll(FILES_TO_CACHE)
+        return cache.addAll(FILES_TO_CACHE)
       })
-      
     );
-  
     // tell the browser to activate this service worker immediately once it
     // has finished installing
     self.skipWaiting();
@@ -51,7 +39,6 @@ self.addEventListener("install", function (evt) {
         );
       })
     );
-  
     self.clients.claim();
   });
 
@@ -64,10 +51,9 @@ self.addEventListener("install", function (evt) {
               .then(response => {
                 // If the response was good, clone it and store it in the cache.
                 if (response.status === 200) {
-                  cache.put(evt.request, response.clone());
-                  //cache.put(evt.request.url, response.clone());
+                  //cache.put(evt.request, response.clone());
+                  cache.put(evt.request.url, response.clone());
                 }
-    
                 return response;
               })
               .catch(err => {
