@@ -8,7 +8,8 @@
     "start": "node server.js",
     "lite-server": "lite-server",
     "seed": "node seeders/seed.js",
-    "build": "webpack --watch"
+    "build": "webpack --watch",
+    "heroku-postbuild": "webpack -p" 
   },
   "repository": {
     "type": "git",
