@@ -8,6 +8,7 @@
   <link rel="shortcut icon" href="icons/icon_192x192.png" type="image/x-icon">
   <link rel="icon" href="favicon.png"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
   <link rel="stylesheet" href="styles.css">
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Budget Tracker</title>
@@ -19,10 +20,22 @@
     </div>
 
     <div class="form">
-      <input type="text" id="t-name" placeholder="Name of transaction" />
-      <input type="number" min="0" id="t-amount" placeholder="Transaction amount" />
-      <button id="add-btn"><i class="fa fa-plus buttons"></i> Add Funds</button>
-      <button id="sub-btn"><i class="fa fa-minus"></i> Subtract Funds</button>
+      <!-- <input type="text" id="t-name" placeholder="Name of transaction" /> -->
+      <div class="input-group mb-3">
+        <input type="text" id="t-name" class="form-control" placeholder="Name of transaction" aria-label="Name of transaction">
+      </div>
+      <!-- <input type="number" min="0" id="t-amount" placeholder="Transaction amount" /> -->
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+        </div>
+        <input type="number" min="0" id="t-amount" class="form-control" placeholder="Transaction amount" aria-label="Transaction amount">
+        <div class="input-group-append">
+          <span class="input-group-text">.00</span>
+        </div>
+      </div>
+      <button id="add-btn" type="button" class="btn btn-success"><i class="fa fa-plus buttons"></i> Add Funds</button>
+      <button id="sub-btn" type="button" class="btn btn-danger"><i class="fa fa-minus"></i> Subtract Funds</button>
       <p class="error"></p>
     </div>
 

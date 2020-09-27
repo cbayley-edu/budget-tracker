@@ -1,63 +1,101 @@
-# Unit 18 PWA Homework: Online/Offline Budget Trackers
+# Budget Tracker
 
-Add functionality to our existing Budget Tracker application to allow for offline access and functionality.
+### Unit 18 PWA Homework: Online/Offline Budget Trackers
 
-The user will be able to add expenses and deposits to their budget with or without a connection. When entering transactions offline, they should populate the total when brought back online.
+### User Story
+* AS AN avid traveller
+* I WANT to be able to track my withdrawals and deposits with or without a data/internet connection
+* SO THAT my account balance is accurate when I am traveling
 
-Offline Functionality:
+## Description
+For this assignment, I was given the base code for this application and I added functionality to allow for offline access and functionality as well as add functionality to make this a Progressive Web App (PWA).
 
-  * Enter deposits offline
+Access the deployed Heroku app here: https://budget-tracker-32087.herokuapp.com/ 
 
-  * Enter expenses offline
-
-When brought back online:
-
-  * Offline entries should be added to tracker.
-
-## User Story
-AS AN avid traveller
-I WANT to be able to track my withdrawals and deposits with or without a data/internet connection
-SO THAT my account balance is accurate when I am traveling
-
-## Business Context
-
-Giving users a fast and easy way to track their money is important, but allowing them to access that information anytime is even more important. Having offline functionality is paramount to our applications success.
+Access the git repo here: https://github.com/cbayley-edu/budget-tracker
 
 
-## Acceptance Criteria
-GIVEN a user is on Budget App without an internet connection
-WHEN the user inputs a withdrawal or deposit
-THEN that will be shown on the page, and added to their transaction history when their connection is back online.
+## Table of Contents 
 
-- - -
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Questions](#questions)
 
-## Commit Early and Often
+## Installation 
 
-* One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
+Since this is a Heroku app, there is no installation required however, if you want to clone or fork my github repo, feel free to do so. After cloning my repo you will have to update information in the package.json as well as setup your own MongoDB.  You will need to run a few commands in the terminal as well:
+* npm i
+* npm run build
+* npm start  (this application is built to run locally on port 3005, which can be changed in server.js)
 
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills
 
-2. Your commit history allows you to revert your code base in the event that you need to return to a previous state
+## Usage
 
-* Follow these guidelines for committing:
+Visit the Heroku app URL to use the application: https://budget-tracker-32087.herokuapp.com/ 
 
-  * Make single purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits
+You will start with a balance of $10,000.
 
-  * Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history
+![start-page](./assets/start-page.png)
 
-  * Don't commit half done work, for the sake of your collaborators (and your future self!)
+You can add an adjusting entry to correct the balance, if needed.
 
-  * Test your application before you commit to ensure functionality at every step in the development process
+![adjust-balance](./assets/adjust-balance.png)
 
-* We would like you to have well over 200 commits by graduation, so commit early and often!
+$5,000 was subtracted from the opening balance leaving a balance of $5,000. The total is updated and your entry is added to your Transactions.
 
-* Deploy your application with [Heroku and MongoDB Atlas.](../04-Important/MongoAtlas-Deploy.md)
+![updated-starting-balance](./assets/updated-starting-balance.png)
 
-## Submission on BCS
+While online, you can continue to make entries and add and subtract from the total as needed.
 
-* You are required to submit the following:
+![add-transaction-online](./assets/add-transaction-online.png)
 
-  * the URL to the deployed application
+Your total and transaction list will immediately update upon selecting Add Funds or Subtract Funds.
 
-  * the URL to the Github repository
+![updated-balance-1](./assets/updated-balance-1.png)
+
+You can also add entries while your offline.
+
+![add-transaction-offline](./assets/add-transaction-offline.png)
+
+Even offline, your total and transaction list will immediately update upon selecting Add Funds or Subtract Funds.
+
+![updated-balance-2](./assets/updated-balance-2.png)
+
+When you go back online the update is seemless. In the background, the application is listening for an internet connection and as soon as you're connected, your local storage will update the online database.
+
+Also included with the application is a graph showing a visual of your balance over time.
+
+![online-update-graph](./assets/online-update-graph.png)
+
+In the address bar, on the far right, next to the favorites icon you'll see another icon that will allow you to install the app locally.
+
+![add-app](./assets/add-app.png)
+
+Once you click the icon you will be asked to install the app.
+
+![local-install](./assets/local-install.png)  ![heroku-install](./assets/heroku-install.png)
+
+The local application looks and functions the same as accessing the application through the website but it allows you access the application without launching your web browser.
+
+![budget-tracker-app](./assets/budget-tracker-app.png)
+
+You can access the app now at anytime from the shortcut added to your desktop (or your phone, if you use the app on your mobile device).
+
+![pwa-shortcut](./assets/pwa-shortcut.png)
+
+
+## License 
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+This project is covered by the above license(s). Click on the badge for more information.
+
+
+## Questions 
+
+GitHub username: cbayley-edu
+GitHub profile link: https://github.com/cbayley-edu
+
+Please email me at christinabayley@comcast.net with any questions you have or any issues you come across.
 
